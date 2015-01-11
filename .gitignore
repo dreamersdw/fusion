@@ -1,4 +1,7 @@
 *.swp
+*.o
+*.hi
 .cabal-sandbox/*
 dist/
+Main
 
