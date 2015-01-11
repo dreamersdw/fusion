@@ -4,9 +4,9 @@ import System.Random
 import Graphics.Gloss
 import Graphics.Gloss.Interface.Pure.Game
 
-size   = 8
+size   = 4
 sep    = 10.0
-border = 50.0
+border = 100.0
 
 type State = Array (Int, Int) (Maybe Int)
 data Game = Game {state :: State, score :: Int, randomGen :: StdGen} 
@@ -16,7 +16,7 @@ totalWidth = ((fromIntegral size) * border + (fromIntegral (size + 1)) * sep)
 
 htmlColor :: String -> Color
 htmlColor ['#', r1, r2, g1, g2, b1, b2] 
-             = makeColor8 red green blue 255
+             = makeColorI red green blue 255
                where [red, green, blue] = fmap toInt [[r1, r2], [g1, g2], [b1, b2]]
                      toInt str = read $ "0x" ++ str
 htmlColor _  = black
